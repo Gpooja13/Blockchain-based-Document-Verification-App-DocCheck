@@ -26,7 +26,7 @@ export default function SideBar() {
     { icon: <TbMessageChatbotFilled />, title: "Contact", link: "/contact" },
   ];
   const [selected, setSelected] = useState(menuItems[0]);
-  const { userAddress, chain } = useGlobalContext();
+  const { userAddress } = useGlobalContext();
   const location = useLocation();
 
   const truncateAddress = (address) => {
@@ -63,7 +63,7 @@ export default function SideBar() {
             </div>
           </div>
         </div>
-        <hr class="my-2 h-px border-0 bg-indigo-500" />
+        <hr className="my-2 h-px border-0 bg-indigo-500" />
         <div>
           <ul>
             {menuItems.map((item, index) => {

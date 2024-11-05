@@ -12,7 +12,7 @@ export default function View() {
     contract,
     viewDocumentInNewTab,
     downloadDocument,
-    email
+    email,
   } = useGlobalContext();
 
   const findDocument = async () => {
@@ -38,14 +38,14 @@ export default function View() {
   };
 
   return (
-    <div >
-      <Heading title={"View"} showBreadcrum={true}/>
+    <div>
+      <Heading title={"View"} showBreadcrum={true} />
       <div className="flex justify-center items-center px-10 h-[90vh]">
         <div className=" w-[50%] h-[68vh] bg-white p-10 mr-4 rounded-3xl drop-shadow-lg">
           <div className="flex justify-center">
             <h2 className="font-semibold text-2xl">Find Document</h2>
           </div>
-          <hr class="my-5 h-px border-0 bg-gray-300" />
+          <hr className="my-5 h-px border-0 bg-gray-300" />
 
           <form action="" className="space-y-5">
             <div>
@@ -73,9 +73,9 @@ export default function View() {
               <input
                 type="email"
                 id="address"
-                value={email}
-                // onChange={(e) => setEmail(e.target.value)}
+                value={email || ""}
                 readOnly
+                // onChange={(e) => setEmail(e.target.value)}
                 className="block w-full h-[8vh] px-4 rounded-md border-gray-300 shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500"
                 placeholder="abc@gmail.com"
               />
@@ -88,13 +88,13 @@ export default function View() {
               <button
                 type="button"
                 onClick={findDocument}
-                class="inline-flex items-center gap-1.5 rounded-lg border border-green-500 bg-green-500 px-5 py-2.5 text-center text-sm font-medium text-white shadow-sm transition-all hover:border-green-700 hover:bg-green-700 focus:ring focus:ring-green-200 disabled:cursor-not-allowed disabled:border-green-300 disabled:bg-green-300 w-[30%] justify-center"
+                className="inline-flex items-center gap-1.5 rounded-lg border border-green-500 bg-green-500 px-5 py-2.5 text-center text-sm font-medium text-white shadow-sm transition-all hover:border-green-700 hover:bg-green-700 focus:ring focus:ring-green-200 disabled:cursor-not-allowed disabled:border-green-300 disabled:bg-green-300 w-[30%] justify-center"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  class="h-4 w-4"
+                  className="h-4 w-4"
                 >
                   <path d="M9.25 13.25a.75.75 0 001.5 0V4.636l2.955 3.129a.75.75 0 001.09-1.03l-4.25-4.5a.75.75 0 00-1.09 0l-4.25 4.5a.75.75 0 101.09 1.03L9.25 4.636v8.614z" />
                   <path d="M3.5 12.75a.75.75 0 00-1.5 0v2.5A2.75 2.75 0 004.75 18h10.5A2.75 2.75 0 0018 15.25v-2.5a.75.75 0 00-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5z" />
@@ -109,7 +109,7 @@ export default function View() {
             <h2 className="font-semibold text-2xl">View Result</h2>
           </div>
 
-          <hr class="my-5 h-px border-0 bg-gray-300" />
+          <hr className="my-5 h-px border-0 bg-gray-300" />
 
           <div className="mt-6 h-[40vh] overflow-y-auto thin-scrollbar">
             {docInfo ? (

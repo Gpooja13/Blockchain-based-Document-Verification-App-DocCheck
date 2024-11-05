@@ -5,8 +5,8 @@ export default function About() {
   return (
     <div>
       <Heading title={"About"} showBreadcrum={true}/>
-      <section class="text-gray-600 w-[72vw] mx-auto body-font p-5 flex items-center overflow-hidden h-[90vh]">
-        <div class="container p-10 mx-auto bg-white rounded-3xl drop-shadow-lg flex flex-wrap items-center justify-between">
+      <section className="text-gray-600 w-[72vw] mx-auto body-font p-5 flex items-center overflow-hidden h-[90vh]">
+        <div className="container p-10 mx-auto bg-white rounded-3xl drop-shadow-lg flex flex-wrap items-center justify-between">
           <div className="flex flex-col">
             <div className="flex items-center">
               <img src="/logo.webp" alt="" width={"50px"} />
@@ -19,7 +19,7 @@ export default function About() {
             </h2>
           </div>
 
-          <div class="mt-5 text-justify">
+          <div className="mt-5 text-justify">
             <p>
               Welcome to <strong>DocCheck</strong>, your trusted platform for
               secure document management and verification. DocCheck offers a

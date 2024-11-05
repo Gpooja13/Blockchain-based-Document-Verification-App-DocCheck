@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Heading from "../Components/Heading";
-import VerificationGif from "../Components/VerificationGif";
 import { FaExternalLinkAlt, FaDownload } from "react-icons/fa";
 import { useGlobalContext } from "../context/context";
 
@@ -59,35 +58,35 @@ export default function Verify() {
           <div className="flex justify-center">
             <h2 className="font-semibold text-2xl">Verify Document</h2>
           </div>
-          <hr class="my-5 h-px border-0 bg-gray-300" />
+          <hr className="my-5 h-px border-0 bg-gray-300" />
 
           <form action="" className="space-y-5">
-            <div class="mx-auto ">
+            <div className="mx-auto ">
               <label
-                for="example5"
-                class="mb-1 block font-medium text-gray-700"
+                htmlFor="example5"
+                className="mb-1 block font-medium text-gray-700"
               >
                 Upload file
               </label>
-              <label class="flex w-full cursor-pointer appearance-none items-center justify-center rounded-md border-2 border-dashed border-gray-200 p-6 transition-all hover:border-primary-300 h-[25vh]">
-                <div class="space-y-1 text-center">
-                  <div class="mx-auto inline-flex h-10 w-10 items-center justify-center rounded-full bg-gray-100">
+              <label className="flex w-full cursor-pointer appearance-none items-center justify-center rounded-md border-2 border-dashed border-gray-200 p-6 transition-all hover:border-primary-300 h-[25vh]">
+                <div className="space-y-1 text-center">
+                  <div className="mx-auto inline-flex h-10 w-10 items-center justify-center rounded-full bg-gray-100">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
-                      stroke-width="1.5"
+                      strokeWidth="1.5"
                       stroke="currentColor"
-                      class="h-6 w-6 text-gray-500"
+                      className="h-6 w-6 text-gray-500"
                     >
                       <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z"
                       />
                     </svg>
                   </div>
-                  <div class="text-gray-600">
+                  <div className="text-gray-600">
                     {file ? (
                       <p className="font-medium text-primary-500 hover:text-primary-700 text-wrap w-3/4 text-sm">
                         {file.name}
@@ -101,14 +100,14 @@ export default function Verify() {
                       </p>
                     )}
                   </div>
-                  <p class="text-sm text-gray-500">
+                  <p className="text-sm text-gray-500">
                     {/* SVG, PNG, JPG or GIF (max. 800x400px) */}
                   </p>
                 </div>
                 <input
                   id="example5"
                   type="file"
-                  class="sr-only"
+                  className="sr-only"
                   onChange={handleFileChange}
                 />
               </label>
@@ -122,13 +121,13 @@ export default function Verify() {
               <button
                 type="button"
                 onClick={verifyHash}
-                class="inline-flex items-center gap-1.5 rounded-lg border border-green-500 bg-green-500 px-5 py-2.5 text-center text-sm font-medium text-white shadow-sm transition-all hover:border-green-700 hover:bg-green-700 focus:ring focus:ring-green-200 disabled:cursor-not-allowed disabled:border-green-300 disabled:bg-green-300 w-[30%] justify-center"
+                className="inline-flex items-center gap-1.5 rounded-lg border border-green-500 bg-green-500 px-5 py-2.5 text-center text-sm font-medium text-white shadow-sm transition-all hover:border-green-700 hover:bg-green-700 focus:ring focus:ring-green-200 disabled:cursor-not-allowed disabled:border-green-300 disabled:bg-green-300 w-[30%] justify-center"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  class="h-4 w-4"
+                  className="h-4 w-4"
                 >
                   <path d="M9.25 13.25a.75.75 0 001.5 0V4.636l2.955 3.129a.75.75 0 001.09-1.03l-4.25-4.5a.75.75 0 00-1.09 0l-4.25 4.5a.75.75 0 101.09 1.03L9.25 4.636v8.614z" />
                   <path d="M3.5 12.75a.75.75 0 00-1.5 0v2.5A2.75 2.75 0 004.75 18h10.5A2.75 2.75 0 0018 15.25v-2.5a.75.75 0 00-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5z" />
@@ -144,7 +143,7 @@ export default function Verify() {
             <h2 className="font-semibold text-2xl">View Result</h2>
           </div>
 
-          <hr class="my-5 h-px border-0 bg-gray-300" />
+          <hr className="my-5 h-px border-0 bg-gray-300" />
 
           <div className="mt-5 h-[40vh] space-y-2">
             {verificationInfo && isVerified ? (

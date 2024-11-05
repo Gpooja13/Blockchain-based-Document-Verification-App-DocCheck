@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   MdDeleteOutline,
   MdOutlineLocationOn,
@@ -11,31 +11,20 @@ import { FiAlertCircle } from "react-icons/fi";
 import Modal from "../Components/Modal";
 import { Link } from "react-router-dom";
 
-export default function ViewIssued({
-  togglePage,
-  currentPage,
-  getAuthorityInfo,
-}) {
+export default function ViewIssued({ togglePage, currentPage }) {
   const {
     issueEvents,
-    setIssueEvents,
     delIssueEvents,
-    setDelIssueEvents,
-    showModal,
     setShowModal,
     viewDocumentInNewTab,
     downloadDocument,
     contract,
     userAddress,
-    message,
     setMessage,
-    loading,
     setLoading,
-    refreshLog,
     setRefreshLog,
     hashcount,
     authorityInfo,
-    setAuthorityInfo,
   } = useGlobalContext();
 
   const [delHash, setDelHash] = useState("");
@@ -81,7 +70,7 @@ export default function ViewIssued({
   return (
     <>
       <Modal deleteFunction={deleteHash} delRecord={delHash} title={"Record"} />
-      <div class="mx-auto bg-white h-[68vh] p-10 rounded-3xl drop-shadow-lg  ">
+      <div className="mx-auto bg-white h-[68vh] p-10 rounded-3xl drop-shadow-lg  ">
         <div className="flex justify-center">
           {authorityInfo ? (
             <h3 className=" font-semibold absolute left-0 top-14 ml-10 flex items-center ">
@@ -103,9 +92,9 @@ export default function ViewIssued({
           <button
             type="button"
             onClick={togglePage}
-            class="  flex items-center divide-x rounded-lg border border-gray-300 bg-white text-center text-sm font-medium text-secondary-700 shadow-sm hover:bg-gray-100 absolute right-0 mr-10"
+            className="  flex items-center divide-x rounded-lg border border-gray-300 bg-white text-center text-sm font-medium text-secondary-700 shadow-sm hover:bg-gray-100 absolute right-0 mr-10"
           >
-            <div class="flex items-center space-x-2 py-2.5 px-3">
+            <div className="flex items-center space-x-2 py-2.5 px-3">
               <span>
                 {currentPage === 0 ? (
                   <span>View Issued</span>
@@ -114,7 +103,7 @@ export default function ViewIssued({
                 )}
               </span>
             </div>
-            <div class="py-2.5 px-3">
+            <div className="py-2.5 px-3">
               {currentPage === 0 ? (
                 <MdOutlineArrowForwardIos />
               ) : (
@@ -123,7 +112,7 @@ export default function ViewIssued({
             </div>
           </button>
         </div>
-        <hr class="mt-5 h-px border-0 bg-gray-300" />
+        <hr className="mt-5 h-px border-0 bg-gray-300" />
         <div className="w-[65vw]">
           <div className="mt-5 h-[40vh] overflow-y-auto thin-scrollbar">
             {hashcount === 0 ? (

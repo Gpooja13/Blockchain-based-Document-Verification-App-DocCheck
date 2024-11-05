@@ -29,7 +29,7 @@ export default function Heading({ title, showBreadcrum }) {
       else
       connect();
     });
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
     return () => unsubscribe();
   }, [navigate]);
 
@@ -37,18 +37,18 @@ export default function Heading({ title, showBreadcrum }) {
     <div className="bg-gray-100 h-[10vh] w-[78.9vw] drop-shadow-md flex justify-between items-center">
       <div className="ml-5">
         <nav aria-label="breadcrumb">
-          {showBreadcrum && <ol class="inline-flex items-center space-x-4 pt-2 text-sm font-medium">
-            <li class="inline-flex items-center">
+          {showBreadcrum && <ol className="inline-flex items-center space-x-4 pt-2 text-sm font-medium">
+            <li className="inline-flex items-center">
               <Link
                 to={"/"}
-                class="text-secondary-500 hover:text-secondary-600 ml-3"
+                className="text-secondary-500 hover:text-secondary-600 ml-3"
               >
                 Home
               </Link>
             </li>
-            <li class="inline-flex items-center space-x-4">
-              <span class="text-secondary-400">/</span>
-              <Link to={""} class="text-secondary-500 hover:text-secondary-600">
+            <li className="inline-flex items-center space-x-4">
+              <span className="text-secondary-400">/</span>
+              <Link to={""} className="text-secondary-500 hover:text-secondary-600">
                 {title}
               </Link>
             </li>
