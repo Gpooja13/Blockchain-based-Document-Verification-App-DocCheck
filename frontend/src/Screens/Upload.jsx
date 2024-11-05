@@ -13,9 +13,7 @@ export default function Upload() {
   const {   
     userAddress, 
     contract,
-    hashcount,
     setHashcount,
-    authorityInfo,
     setAuthorityInfo,
   } = useGlobalContext();
 
@@ -61,6 +59,7 @@ export default function Upload() {
   useEffect(() => {
     if(contract)
     getAuthorityInfo(userAddress);
+  // eslint-disable-next-line
   }, []);
 
   return (

@@ -30,6 +30,7 @@ const SignIn = () => {
         setEmail(currentUser.email);
       }
     });
+    // eslint-disable-next-line
     return () => unsubscribe();
   }, [navigate]);
 

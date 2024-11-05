@@ -13,7 +13,7 @@ import SignUp from "./Screens/SignUp";
 import SignIn from "./Screens/SignIn";
 
 const App = () => {
-  const { initializeWeb3, contract, ownerAddress, setOwnerAddress } =
+  const { initializeWeb3, contract, setOwnerAddress } =
     useGlobalContext();
 
   const getOnwerInfo = async () => {
@@ -32,12 +32,14 @@ const App = () => {
 
   useEffect(() => {
     initializeWeb3();
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
     if (contract) {
       getOnwerInfo();
     }
+    // eslint-disable-next-line
   }, [contract]);
 
   return (

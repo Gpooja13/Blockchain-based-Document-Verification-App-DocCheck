@@ -40,6 +40,7 @@ export default function SideBar() {
     if (activeMenuItem) {
       setSelected(activeMenuItem);
     }
+    // eslint-disable-next-line
   }, [location.pathname]);
 
   return (

@@ -172,6 +172,7 @@ export default function IssueDoc({
     };
 
     fetchEvents();
+    // eslint-disable-next-line
     return () => {
       isMounted = false; // Cleanup on unmount
     };

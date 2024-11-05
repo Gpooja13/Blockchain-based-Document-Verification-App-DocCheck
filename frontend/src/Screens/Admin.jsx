@@ -137,7 +137,7 @@ export default function Admin() {
     if (contract) {
       getAuthorityCount();
     }
-
+// eslint-disable-next-line
     return () => {
       isMounted = false;
     };
