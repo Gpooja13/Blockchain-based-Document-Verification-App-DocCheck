@@ -29,9 +29,9 @@ export default function Heading({ title, showBreadcrum }) {
       else
       connect();
     });
-// eslint-disable-next-line react-hooks/exhaustive-deps
+
     return () => unsubscribe();
-  }, [navigate]);
+  }, [navigate,connect]);
 
   return (
     <div className="bg-gray-100 h-[10vh] w-[78.9vw] drop-shadow-md flex justify-between items-center">
