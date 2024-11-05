@@ -59,7 +59,6 @@ export default function Upload() {
   useEffect(() => {
     if(contract)
     getAuthorityInfo(userAddress);
-  // eslint-disable-next-line
   }, []);
 
   return (
