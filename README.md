@@ -1,6 +1,4 @@
-Here’s the README template formatted properly for Markdown.
-
----
+![Logo](https://cdn-icons-png.flaticon.com/128/9881/9881807.png)
 
 # DocChain
 
@@ -91,7 +89,7 @@ Make sure your Metamask is connected to the **Sepolia testnet**. Import test ETH
 ## Contract Deployment
 
 ### Compile and Deploy the Smart Contract
-1. **Compile** the contract using a tool like [Remix IDE](https://remix.ethereum.org/) or Truffle.
+1. **Compile** the contract using a tool like [Remix IDE](https://remix.ethereum.org/) or Hardhat.
 2. **Deploy** the contract on the Sepolia testnet.
 3. Note down the contract address and update the `.env` file with the `REACT_APP_CONTRACT_ADDRESS`.
 
@@ -110,20 +108,3 @@ If you'd like to contribute, please fork the repository and use a feature branch
 
 ---
 
-
-
-
-
-# Sample Hardhat Project
-
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
-
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.js
-```
