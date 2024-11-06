@@ -8,12 +8,15 @@ DocCheck ensures transparency and prevents fraud by providing a tamper-proof rec
 
 ## Table of Contents
 - [Features](#features)
+- [Usage](#usage)
+- [Demo](#Demo)
+- [Screenshots](#Screenshot)
 - [Tech Stack](#tech-stack)
 - [Prerequisites](#prerequisites)
 - [Setup Instructions](#setup-instructions)
-- [Usage](#usage)
 - [Contract Deployment](#contract-deployment)
 - [Contributing](#contributing)
+- [Contact](#Contact]
 
 ---
 
