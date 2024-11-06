@@ -1,8 +1,8 @@
 ![Logo](https://cdn-icons-png.flaticon.com/128/9881/9881807.png)
 
-# DocChain
+# DocCheck
 
-DocChain is a decentralized application (DApp) for secure document validation and verification, utilizing blockchain technology to prevent fraud. Built using smart contracts, DocChain allows users to upload, view, and verify various documents like certificates and degrees with enhanced transparency and security.
+DocCheck is a decentralized application (DApp) for secure document validation and verification, utilizing blockchain technology to prevent fraud. Built using smart contracts, DocChain allows users to upload, view, and verify various documents like certificates and degrees with enhanced transparency and security.
 
 ## Table of Contents
 - [Features](#features)
@@ -20,6 +20,43 @@ DocChain is a decentralized application (DApp) for secure document validation an
 - **Secure Verification**: Verify document authenticity with a blockchain-based ledger to prevent tampering or unauthorized modifications.
 - **Transparent Access**: Publicly accessible validation records, ensuring transparency and reliability in the verification process.
 - **User-Friendly Interface**: A React-based UI for an intuitive experience.
+
+
+## Usage
+
+1. **Admin Panel**:
+   - Accessible only by the owner’s address (set in the environment configuration).
+   - Allows adding and deleting document issuers (authorities).
+
+2. **Add Document Issuer**:
+   - Admin can add new authorities responsible for issuing documents.
+   - Authority information is stored on the blockchain for transparency.
+
+3. **View Logs**:
+   - Track all registered authorities and changes, including the timestamp for each action.
+
+4. **Verify Document**:
+   - Users can verify the validity of a document by searching for its issuer and corresponding data on the blockchain.
+
+5. **View Issued Document**:
+   - View or find specific issued documents by entering the credentials used at issuance (such as user ID and email).
+   - This feature helps users or authorities quickly locate and verify document details on the blockchain for validation purposes.
+
+## Demo
+
+The E-commerce demo can be viewed online here:
+https://shopping-hyo8rc365-gpooja13s-projects.vercel.app/
+
+Check out video here: [Demo video](https://res.cloudinary.com/cloudtrial/video/upload/v1715411758/InShot_20240511_120219589_hzauey.mp4)
+
+## Screenshots
+
+- Login Page
+![Login](https://res.cloudinary.com/cloudtrial/image/upload/v1715412750/Screenshot_242_qrmt58.png)
+
+- Home Page
+![Home](https://res.cloudinary.com/cloudtrial/image/upload/v1715412752/Screenshot_237_l5zjtv.png)
+
 
 ## Tech Stack
 - **Frontend**: React.js
@@ -65,26 +102,6 @@ npm start
 ### 5. Connect to Metamask
 Make sure your Metamask is connected to the **Sepolia testnet**. Import test ETH from a faucet if necessary for transaction testing.
 
-## Usage
-
-1. **Admin Panel**:
-   - Accessible only by the owner’s address (set in the environment configuration).
-   - Allows adding and deleting document issuers (authorities).
-
-2. **Add Document Issuer**:
-   - Admin can add new authorities responsible for issuing documents.
-   - Authority information is stored on the blockchain for transparency.
-
-3. **View Logs**:
-   - Track all registered authorities and changes, including the timestamp for each action.
-
-4. **Verify Document**:
-   - Users can verify the validity of a document by searching for its issuer and corresponding data on the blockchain.
-
-5. **Find Issued Document**:
-   - View or find specific issued documents by entering the credentials used at issuance (such as document ID, authority name, or other metadata).
-   - This feature helps users or authorities quickly locate and verify document details on the blockchain for validation purposes.
-
 ## Contract Deployment
 
 ### Compile and Deploy the Smart Contract
@@ -104,6 +121,12 @@ If you'd like to contribute, please fork the repository and use a feature branch
 3. Commit your changes (`git commit -m 'Add some feature'`).
 4. Push to the branch (`git push origin feature/YourFeature`).
 5. Open a Pull Request.
+
+
+## Contact
+
+For any questions or feedback, please contact: pooja13gupta09@gmail.com.
+
 
 ---
 
