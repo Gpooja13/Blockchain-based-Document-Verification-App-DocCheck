@@ -12,6 +12,7 @@ const SignIn = () => {
   });
   const navigate = useNavigate();
   const { connect, setEmail } = useGlobalContext();
+  const [errorLogin, setErrorLogin] = useState("");
 
   const handleLoginIn = async () => {
     try {
@@ -20,6 +21,10 @@ const SignIn = () => {
       connect();
     } catch (error) {
       console.log(error);
+      setErrorLogin("Invalid credentials!");
+      setTimeout(() => {
+        setErrorLogin("");
+      }, 3000);
     }
   };
 
@@ -76,9 +81,23 @@ const SignIn = () => {
                 }
                 className="px-4 py-2 w-72 border border-gray-500 bg-gray-800 text-white rounded"
               />
+              <p className="text-red-500 text-sm absolute bottom-60">
+                {errorLogin}
+              </p>
               <button
                 onClick={handleLoginIn}
-                className="px-4 py-2 bg-red-600 rounded font-bold text-white w-1/2 hover:bg-red-700"
+                className={`px-4 py-2 mt-5 bg-red-600 rounded font-bold text-white w-1/2 hover:bg-red-700 ${
+                  !formValues.email ||
+                  !formValues.password ||
+                  formValues.password.length < 6
+                    ? "cursor-not-allowed opacity-50"
+                    : ""
+                }`}
+                disabled={
+                  !formValues.email ||
+                  !formValues.password ||
+                  formValues.password.length < 6
+                }
               >
                 Login
               </button>
