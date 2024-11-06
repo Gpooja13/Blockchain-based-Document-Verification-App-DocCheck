@@ -2,7 +2,9 @@
 
 # DocCheck
 
-DocCheck is a decentralized application (DApp) for secure document validation and verification, utilizing blockchain technology to prevent fraud. Built using smart contracts, DocChain allows users to upload, view, and verify various documents like certificates and degrees with enhanced transparency and security.
+DocCheck is a decentralized application (DApp) for secure document validation and verification, utilizing blockchain technology to prevent fraud. Built using smart contracts, DocCheck allows users to upload, view, and verify various documents like certificates and degrees with enhanced transparency and security.
+
+DocCheck ensures transparency and prevents fraud by providing a tamper-proof record for every document. Each document uploaded is immutably recorded on the blockchain, allowing for reliable verification and traceability. Whether you're a student, professional, or organization, DocCheck safeguards the authenticity and integrity of your documents, offering a seamless solution for secure document storage and verification. Powered by smart contracts, DocCheck guarantees that your documents remain protected and fraud-proof throughout their lifecycle. Experience the future of document management with blockchain-powered verification. Join us in redefining trust with DocCheck!
 
 ## Table of Contents
 - [Features](#features)
