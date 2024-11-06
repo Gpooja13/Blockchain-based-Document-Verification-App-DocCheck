@@ -66,7 +66,7 @@ export default function Heading({ title, showBreadcrum }) {
             connected ? "hidden" : ""
           } rounded-lg border border-red-500 bg-red-500 px-5 py-2.5 text-center text-sm font-medium text-white shadow-sm transition-all hover:border-red-700 hover:bg-red-700 focus:ring focus:ring-red-200`}
         >
-          Login
+          Connect
         </button>
         <button
           type="button"
