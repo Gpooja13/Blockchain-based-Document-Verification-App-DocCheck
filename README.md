@@ -42,6 +42,10 @@ DocCheck is a decentralized application (DApp) for secure document validation an
    - View or find specific issued documents by entering the credentials used at issuance (such as user ID and email).
    - This feature helps users or authorities quickly locate and verify document details on the blockchain for validation purposes.
 
+### Note
+
+Viewing documents does not require a Metamask account. However, a Metamask account is necessary for performing other operations, such as document issuance or verification.
+
 ## Demo
 
 The E-commerce demo can be viewed online here:
