@@ -12,7 +12,6 @@ DocChain is a decentralized application (DApp) for secure document validation an
 - [Usage](#usage)
 - [Contract Deployment](#contract-deployment)
 - [Contributing](#contributing)
-- [License](#license)
 
 ---
 
