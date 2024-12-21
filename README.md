@@ -1,17 +1,22 @@
 ![Logo](https://cdn-icons-png.flaticon.com/128/9881/9881807.png)
 
-# DocChain
+# DocCheck
 
-DocChain is a decentralized application (DApp) for secure document validation and verification, utilizing blockchain technology to prevent fraud. Built using smart contracts, DocChain allows users to upload, view, and verify various documents like certificates and degrees with enhanced transparency and security.
+DocCheck is a decentralized application (DApp) for secure document validation and verification, utilizing blockchain technology to prevent fraud. Built using smart contracts, DocCheck allows users to upload, view, and verify various documents like certificates and degrees with enhanced transparency and security.
+
+DocCheck ensures transparency and prevents fraud by providing a tamper-proof record for every document. Each document uploaded is immutably recorded on the blockchain, allowing for reliable verification and traceability. Whether you're a student, professional, or organization, DocCheck safeguards the authenticity and integrity of your documents, offering a seamless solution for secure document storage and verification. Powered by smart contracts, DocCheck guarantees that your documents remain protected and fraud-proof throughout their lifecycle. Experience the future of document management with blockchain-powered verification. Join us in redefining trust with DocCheck!
 
 ## Table of Contents
 - [Features](#features)
+- [Usage](#usage)
+- [Demo](#Demo)
+- [Screenshots](#Screenshot)
 - [Tech Stack](#tech-stack)
 - [Prerequisites](#prerequisites)
 - [Setup Instructions](#setup-instructions)
-- [Usage](#usage)
 - [Contract Deployment](#contract-deployment)
 - [Contributing](#contributing)
+- [Contact](#Contact)
 
 ---
 
@@ -20,6 +25,45 @@ DocChain is a decentralized application (DApp) for secure document validation an
 - **Secure Verification**: Verify document authenticity with a blockchain-based ledger to prevent tampering or unauthorized modifications.
 - **Transparent Access**: Publicly accessible validation records, ensuring transparency and reliability in the verification process.
 - **User-Friendly Interface**: A React-based UI for an intuitive experience.
+
+
+## Usage
+
+1. **Admin Panel**:
+   - Accessible only by the owner’s address (set in the environment configuration).
+   - Allows adding and deleting document issuers (authorities).
+
+2. **Add Document Issuer**:
+   - Admin can add new authorities responsible for issuing documents.
+   - Authority information is stored on the blockchain for transparency.
+
+3. **View Logs**:
+   - Track all registered authorities and changes, including the timestamp for each action.
+
+4. **Verify Document**:
+   - Users can verify the validity of a document by searching for its issuer and corresponding data on the blockchain.
+
+5. **View Issued Document**:
+   - View or find specific issued documents by entering the credentials used at issuance (such as user ID and email).
+   - This feature helps users or authorities quickly locate and verify document details on the blockchain for validation purposes.
+
+**Note: Viewing documents does not require a Metamask account. However, a Metamask account is necessary for performing other operations, such as document issuance or verification.**
+
+## Demo
+
+The E-commerce demo can be viewed online here:
+https://shopping-hyo8rc365-gpooja13s-projects.vercel.app/
+
+Check out video here: [Demo video](https://res.cloudinary.com/cloudtrial/video/upload/v1715411758/InShot_20240511_120219589_hzauey.mp4)
+
+## Screenshots
+
+- Login Page
+![Login](https://res.cloudinary.com/cloudtrial/image/upload/v1715412750/Screenshot_242_qrmt58.png)
+
+- Home Page
+![Home](https://res.cloudinary.com/cloudtrial/image/upload/v1715412752/Screenshot_237_l5zjtv.png)
+
 
 ## Tech Stack
 - **Frontend**: React.js
@@ -65,26 +109,6 @@ npm start
 ### 5. Connect to Metamask
 Make sure your Metamask is connected to the **Sepolia testnet**. Import test ETH from a faucet if necessary for transaction testing.
 
-## Usage
-
-1. **Admin Panel**:
-   - Accessible only by the owner’s address (set in the environment configuration).
-   - Allows adding and deleting document issuers (authorities).
-
-2. **Add Document Issuer**:
-   - Admin can add new authorities responsible for issuing documents.
-   - Authority information is stored on the blockchain for transparency.
-
-3. **View Logs**:
-   - Track all registered authorities and changes, including the timestamp for each action.
-
-4. **Verify Document**:
-   - Users can verify the validity of a document by searching for its issuer and corresponding data on the blockchain.
-
-5. **Find Issued Document**:
-   - View or find specific issued documents by entering the credentials used at issuance (such as document ID, authority name, or other metadata).
-   - This feature helps users or authorities quickly locate and verify document details on the blockchain for validation purposes.
-
 ## Contract Deployment
 
 ### Compile and Deploy the Smart Contract
@@ -104,6 +128,12 @@ If you'd like to contribute, please fork the repository and use a feature branch
 3. Commit your changes (`git commit -m 'Add some feature'`).
 4. Push to the branch (`git push origin feature/YourFeature`).
 5. Open a Pull Request.
+
+
+## Contact
+
+For any questions or feedback, please contact: pooja13gupta09@gmail.com.
+
 
 ---
 
