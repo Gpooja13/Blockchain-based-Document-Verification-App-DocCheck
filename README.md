@@ -135,5 +135,17 @@ If you'd like to contribute, please fork the repository and use a feature branch
 For any questions or feedback, please contact: pooja13gupta09@gmail.com.
 
 
+## Additional Information
+
+Admin login credentials:
+gpooja@yahoo.com
+pooja13
+
+User login credentials:
+jane@gmail.com
+Jane123
+
+
+
 ---
 
