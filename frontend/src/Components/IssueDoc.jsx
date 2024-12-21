@@ -170,8 +170,9 @@ export default function IssueDoc({ togglePage, currentPage }) {
     // eslint-disable-next-line
     return () => {
       isMounted = false; // Cleanup on unmount
+      setFile(null);
     };
-  }, [refreshLog,userAddress]);
+  }, [refreshLog, userAddress]);
 
   return (
     <div className="mx-auto bg-white h-[68vh] p-10 rounded-3xl drop-shadow-lg ">
@@ -315,7 +316,11 @@ export default function IssueDoc({ togglePage, currentPage }) {
                 </div>
                 {file ? (
                   <p className="text-xs h-10 font-medium hover:text-primary-700 flex items-center">
-                    {file.name}
+                    {file.name.length > 30
+                      ? `${file.name.substr(0, 15)}...${file.name.substr(
+                          file.name.length - 15
+                        )}`
+                      : file.name}
                   </p>
                 ) : (
                   <div className=" text-gray-600">
@@ -352,7 +357,7 @@ export default function IssueDoc({ togglePage, currentPage }) {
           <button
             type="button"
             onClick={sendHash}
-            className="rounded-lg border border-yellow-500 bg-yellow-500 px-5 py-2.5 text-center text-sm font-medium text-white shadow-sm transition-all hover:border-yellow-700 hover:bg-yellow-700 focus:ring focus:ring-yellow-200 disabled:cursor-not-allowed disabled:border-yellow-300 disabled:bg-yellow-300"
+            className="rounded-lg border border-green-500 bg-green-500 px-5 py-2.5 text-center text-sm font-medium text-white shadow-sm transition-all hover:border-green-700 hover:bg-green-700 focus:ring focus:ring-green-200 disabled:cursor-not-allowed disabled:border-green-300 disabled:bg-green-300"
             disabled={!isFileHashed || loading}
           >
             {loading && authorityInfo ? "Processing..." : "Upload File"}

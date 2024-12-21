@@ -51,7 +51,7 @@ export default function Verify() {
 
   return (
     <div>
-      <Heading title={"Verify"} showBreadcrum={true}/>
+      <Heading title={"Verify"} showBreadcrum={true} />
       {/* <VerificationGif/> */}
       <div className="flex justify-center items-center px-10 h-[90vh]">
         <div className=" w-[50%] h-[68vh] bg-white p-10 mr-4 rounded-3xl drop-shadow-lg">
@@ -89,7 +89,11 @@ export default function Verify() {
                   <div className="text-gray-600">
                     {file ? (
                       <p className="font-medium text-primary-500 hover:text-primary-700 text-wrap w-3/4 text-sm">
-                        {file.name}
+                        {file.name.length > 30
+                          ? `${file.name.substr(0, 15)}...${file.name.substr(
+                              file.name.length - 15
+                            )}`
+                          : file.name}
                       </p>
                     ) : (
                       <p className="font-medium text-primary-500 hover:text-primary-700">
