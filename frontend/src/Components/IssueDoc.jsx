@@ -8,19 +8,15 @@ import { FiAlertCircle } from "react-icons/fi";
 import { useGlobalContext } from "../context/context";
 import { Link } from "react-router-dom";
 
-export default function IssueDoc({
-  togglePage,
-  currentPage,
-}) {
+export default function IssueDoc({ togglePage, currentPage }) {
   const [cid, setCid] = useState(null);
   const [name, setName] = useState("");
   const [rollno, setRollno] = useState("");
   const [desc, setDesc] = useState("");
   const [email, setEmail] = useState("");
   const {
-  
     setIssueEvents,
-  
+
     setDelIssueEvents,
     get_ChainID,
     userAddress,
@@ -37,7 +33,6 @@ export default function IssueDoc({
     refreshLog,
     setRefreshLog,
     authorityInfo,
-   
   } = useGlobalContext();
 
   const uploadFileToPinata = async () => {
@@ -176,26 +171,35 @@ export default function IssueDoc({
     return () => {
       isMounted = false; // Cleanup on unmount
     };
-  }, [refreshLog]);
+  }, [refreshLog,userAddress]);
 
   return (
     <div className="mx-auto bg-white h-[68vh] p-10 rounded-3xl drop-shadow-lg ">
       <div className="flex justify-center">
-        {!authorityInfo && <h3 className=" font-semibold absolute left-0 top-12 ml-10 flex text-sm flex-col">
-          <Link to={"/contact"}>
-            <div className="flex items-center">
-              <FiAlertCircle className="mr-1" />
-              Not Registered as a Validator{" "}
-            </div>
-            <p className="ml-4 text-red-500">Contact us</p>
-          </Link>
-        </h3>}
+        {!authorityInfo && (
+          <h3 className=" font-semibold absolute left-0 top-12 ml-10 flex text-sm flex-col">
+            <Link to={"/contact"}>
+              <div className="flex items-center">
+                <FiAlertCircle className="mr-1" />
+                Not Registered as a Validator{" "}
+              </div>
+              <p className="ml-4 text-red-500">Contact us</p>
+            </Link>
+          </h3>
+        )}
 
         <h2 className="font-semibold text-2xl">Upload Document</h2>
         <button
           type="button"
+          disabled={!authorityInfo}
           onClick={togglePage}
-          className="  flex items-center divide-x rounded-lg border border-gray-300 bg-white text-center text-sm font-medium text-secondary-700 shadow-sm hover:bg-gray-100 absolute right-0 mr-10"
+          className={`flex items-center divide-x rounded-lg border border-gray-300 bg-white text-center text-sm font-medium shadow-sm 
+    ${
+      !authorityInfo
+        ? "text-gray-400 cursor-not-allowed"
+        : "text-secondary-700 hover:bg-gray-100"
+    } 
+    absolute right-0 mr-10`}
         >
           <div className="flex items-center space-x-2 py-2.5 px-3">
             <span>
@@ -219,7 +223,10 @@ export default function IssueDoc({
       <form action="" className="space-y-5 flex items-baseline justify-center ">
         <div className="grid grid-cols-6 gap-5 w-[47vw] ">
           <div className="col-span-2">
-            <label htmlFor="example7" className="mb-1 block font-medium text-gray-700">
+            <label
+              htmlFor="example7"
+              className="mb-1 block font-medium text-gray-700"
+            >
               Name
             </label>
             <input
@@ -232,7 +239,10 @@ export default function IssueDoc({
             />
           </div>
           <div className="col-span-2">
-            <label htmlFor="example8" className="mb-1 block font-medium text-gray-700">
+            <label
+              htmlFor="example8"
+              className="mb-1 block font-medium text-gray-700"
+            >
               Id
             </label>
             <input
@@ -245,7 +255,10 @@ export default function IssueDoc({
             />
           </div>
           <div className="col-span-2">
-            <label htmlFor="example8" className="mb-1 block font-medium text-gray-700">
+            <label
+              htmlFor="example8"
+              className="mb-1 block font-medium text-gray-700"
+            >
               Email
             </label>
             <input
@@ -258,7 +271,10 @@ export default function IssueDoc({
             />
           </div>
           <div className="col-span-6">
-            <label htmlFor="example9" className="mb-1 block font-medium text-gray-700">
+            <label
+              htmlFor="example9"
+              className="mb-1 block font-medium text-gray-700"
+            >
               Description
             </label>
             <input

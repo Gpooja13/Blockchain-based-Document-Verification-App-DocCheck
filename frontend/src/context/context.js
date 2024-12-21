@@ -126,21 +126,40 @@ export const GlobalContextProvider = ({ children }) => {
       const web3 = new Web3(window.ethereum);
       const contractAddress = address; // Use the validated contract address
       const contractABI = abi; // Use the correct ABI
-
+  
       try {
+        // Request accounts from the user
         const accounts = await window.ethereum.request({
           method: "eth_requestAccounts",
         });
         const userAddress = accounts[0]; // Get the user's address
-        console.log("user",userAddress);
+        console.log("User Address:", userAddress);
         setUserAddress(userAddress); // Store the user's address
-
+  
         const contractInstance = new web3.eth.Contract(
           contractABI,
           contractAddress
         );
         setContract(contractInstance);
-        // getEthBalance(userAddress);
+  
+        // Listen for account changes
+        window.ethereum.on("accountsChanged", (accounts) => {
+          if (accounts.length > 0) {
+            const newAddress = accounts[0];
+            console.log("Account changed:", newAddress);
+            setUserAddress(newAddress); // Update the user address
+          } else {
+            console.log("No accounts connected.");
+            setUserAddress(""); // Clear the user address
+            setConnected(false); // Optionally update connection status
+          }
+        });
+  
+        // Optionally, you can also listen for chain changes
+        window.ethereum.on("chainChanged", () => {
+          // Refresh the page to handle chain changes
+          window.location.reload();
+        });
       } catch (error) {
         console.error("Error initializing contract:", error);
       }
@@ -148,6 +167,7 @@ export const GlobalContextProvider = ({ children }) => {
       console.error("Please install MetaMask!");
     }
   };
+  
 
   const viewDocumentInNewTab = (ipfsHash) => {
     const ipfsUrl = `https://ipfs.io/ipfs/${ipfsHash}`;

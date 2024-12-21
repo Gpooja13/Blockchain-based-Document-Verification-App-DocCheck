@@ -14,7 +14,7 @@ export default function Contact() {
             <hr className="my-4 h-px border-0 bg-gray-300" />
 
             <p className="mx-auto leading-relaxed text-sm">
-            Feel free to reach out with any questions or feedback. 
+            Feel free to reach out with any assistance or feedback. 
             <br/>We're here to assist you with DocCheck!
             </p>
           </div>

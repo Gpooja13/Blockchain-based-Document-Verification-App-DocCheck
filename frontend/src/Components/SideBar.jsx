@@ -72,7 +72,7 @@ export default function SideBar() {
                 <Link key={index} to={item.link}>
                   <li
                     onClick={() => setSelected(menuItems[index])}
-                    className={`h-[10vh] flex items-center justify-start text-lg drop-shadow-lg hover:bg-indigo-200 ${
+                    className={`h-[10vh] flex items-center justify-start text-lg drop-shadow-sm hover:bg-indigo-200 ${
                       selected.title === item.title
                         ? "border-r-green-500 border-2 font-semibold border-y-indigo-200 border-l-indigo-200 bg-indigo-200 border-r-4"
                         : ""
