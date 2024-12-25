@@ -3,7 +3,7 @@ import Heading from "../Components/Heading";
 import { Link } from "react-router-dom";
 
 export default function Home() {
- 
+
   return (
     <section className="text-gray-600 body-font ">
       <Heading title={"Home"} showBreadcrum={false} />

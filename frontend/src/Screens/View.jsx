@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Heading from "../Components/Heading";
 import { FaExternalLinkAlt, FaDownload } from "react-icons/fa";
 import { useGlobalContext } from "../context/context";
+import { firebaseAuth } from "../Utils/firebase";
 
 export default function View() {
   const [rollno, setRollno] = useState("");
@@ -13,6 +14,7 @@ export default function View() {
     viewDocumentInNewTab,
     downloadDocument,
     email,
+    setEmail,
   } = useGlobalContext();
 
   const findDocument = async () => {
@@ -29,13 +31,22 @@ export default function View() {
         .call();
 
       setDocInfo(response[1]);
-
-      console.log(response[1]);
+      setMessage("");
+ 
     } catch (error) {
       console.error("Error fetching document:", error);
       setMessage("Document not found.");
+      setDocInfo("");
     }
   };
+
+   useEffect(() => {
+      const user =  firebaseAuth.currentUser;
+      if (user) {
+        setEmail(user.email); // Fetch the email
+      }
+    }, []);
+  
 
   return (
     <div>

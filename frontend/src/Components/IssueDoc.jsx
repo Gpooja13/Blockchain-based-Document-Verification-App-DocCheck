@@ -16,7 +16,7 @@ export default function IssueDoc({ togglePage, currentPage }) {
   const [email, setEmail] = useState("");
   const {
     setIssueEvents,
-
+    validateEmail,
     setDelIssueEvents,
     get_ChainID,
     userAddress,
@@ -80,53 +80,65 @@ export default function IssueDoc({ togglePage, currentPage }) {
 
   const sendHash = async () => {
     try {
-      setLoading(true);
-      setMessage("Please confirm the transaction 🙂");
-
       // Get the current chain ID
-      await get_ChainID();
+      if (validateEmail(email)) {
+        setLoading(true);
+        setMessage("Please confirm the transaction 🙂");
+        await get_ChainID();
 
-      // Upload the file to Pinata IPFS
-      const uploadedCid = await uploadFileToPinata();
-      setCid(uploadedCid);
-      console.log(`File CID from Pinata: ${uploadedCid}`);
+        // Upload the file to Pinata IPFS
+        const uploadedCid = await uploadFileToPinata();
+        setCid(uploadedCid);
+        console.log(`File CID from Pinata: ${uploadedCid}`);
 
-      if (fileHash && fileHash.length > 4 && name && rollno && email && desc) {
-        const record = {
-          blockNumber: 0,
-          minetime: 0,
-          info: " ",
-          ipfs_hash: uploadedCid,
-          rollno: rollno,
-          name: name,
-          description: desc,
-          email: email,
-        };
+        if (
+          fileHash &&
+          fileHash.length > 4 &&
+          name &&
+          rollno &&
+          email &&
+          validateEmail(email) &&
+          desc
+        ) {
+          const record = {
+            blockNumber: 0,
+            minetime: 0,
+            info: " ",
+            ipfs_hash: uploadedCid,
+            rollno: rollno,
+            name: name,
+            description: desc,
+            email: email,
+          };
 
-        contract.methods
-          .addDocHash(fileHash, record)
-          .send({ from: userAddress })
-          .on("transactionHash", function (_hash) {
-            setMessage("Please wait for transaction to be mined...");
-          })
-          .on("receipt", function (receipt) {
-            console.log("Transaction receipt:", receipt);
-            setMessage("Transaction successful!");
-            setLoading(false);
-            setRefreshLog(Math.random());
-            setName("");
-            setDesc("");
-            setRollno("");
-            setEmail("");
-            setFile(null);
-          })
-          .on("error", function (error) {
-            console.error("Error in transaction", error);
-            setMessage(`Error: ${error.message} 😏`);
-            setLoading(false);
-          });
-      } else {
-        setMessage("Enter all Details");
+          contract.methods
+            .addDocHash(fileHash, record)
+            .send({ from: userAddress })
+            .on("transactionHash", function (_hash) {
+              setMessage("Please wait for transaction to be mined...");
+            })
+            .on("receipt", function (receipt) {
+              console.log("Transaction receipt:", receipt);
+              setMessage("Transaction successful!");
+              setLoading(false);
+              setRefreshLog(Math.random());
+              setName("");
+              setDesc("");
+              setRollno("");
+              setEmail("");
+              setFile(null);
+            })
+            .on("error", function (error) {
+              console.error("Error in transaction", error);
+              setMessage(`Error: ${error.message} 😏`);
+              setLoading(false);
+            });
+        } else {
+          setMessage("Enter all Details");
+        }
+      }
+      else{
+        setMessage("Enter all Details Correctly!");
       }
     } catch (error) {
       console.error("Error in sendHash function", error);

@@ -15,6 +15,7 @@ export default function Upload() {
     contract,
     setHashcount,
     setAuthorityInfo,
+    refreshLog
   } = useGlobalContext();
 
   // Toggle between pages and set slide direction
@@ -59,7 +60,7 @@ export default function Upload() {
   useEffect(() => {
     if(contract)
     getAuthorityInfo(userAddress);
-  }, []);
+  }, [refreshLog]);
 
   return (
     <div>

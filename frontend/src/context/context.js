@@ -186,6 +186,12 @@ export const GlobalContextProvider = ({ children }) => {
     document.body.removeChild(link);
   };
 
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+
   return (
     <GlobalContext.Provider
       value={{
@@ -225,6 +231,7 @@ export const GlobalContextProvider = ({ children }) => {
         handleFileChange,
         viewDocumentInNewTab,
         downloadDocument,
+        validateEmail,
       }}
     >
       {children}

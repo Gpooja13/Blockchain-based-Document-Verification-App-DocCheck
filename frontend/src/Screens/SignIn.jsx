@@ -30,6 +30,7 @@ const SignIn = () => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(firebaseAuth, (currentUser) => {
+     
       if (currentUser) {
         navigate("/");
         setEmail(currentUser.email);

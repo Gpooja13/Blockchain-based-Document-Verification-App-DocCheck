@@ -113,6 +113,11 @@ export default function Verify() {
                   type="file"
                   className="sr-only"
                   onChange={handleFileChange}
+                  onClick={() => {
+                    setVerificationInfo(null);
+                    setIsVerified("unKnown");
+                    setMessage("");
+                  }}
                 />
               </label>
             </div>
