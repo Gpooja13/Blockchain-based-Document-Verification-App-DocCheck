@@ -67,7 +67,7 @@ Check out video here: [Demo video](https://res.cloudinary.com/cloudtrial/video/u
 
 ## Tech Stack
 - **Frontend**: React.js
-- **Backend**: Smart contracts (using Solidity)
+- **Backend**: Smart contracts (using Solidity) and Hardhat for implementation
 - **Blockchain**: Ethereum (Sepolia testnet for testing)
 - **Libraries/Frameworks**: 
   - Web3.js for interacting with the blockchain
