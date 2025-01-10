@@ -59,10 +59,10 @@ Check out video here: [Demo video](https://res.cloudinary.com/cloudtrial/video/u
 ## Screenshots
 
 - Login Page
-![Login](https://res.cloudinary.com/cloudtrial/image/upload/v1715412750/Screenshot_242_qrmt58.png)
+![Login](https://res.cloudinary.com/cloudtrial/image/upload/v1736543940/blockchain-certification_ovrmni.png)
 
 - Home Page
-![Home](https://res.cloudinary.com/cloudtrial/image/upload/v1715412752/Screenshot_237_l5zjtv.png)
+![Home](https://res.cloudinary.com/cloudtrial/image/upload/v1736543939/bc_zk5prr.png)
 
 
 ## Tech Stack
