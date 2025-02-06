@@ -52,7 +52,7 @@ DocCheck ensures transparency and prevents fraud by providing a tamper-proof rec
 ## Demo
 
 The E-commerce demo can be viewed online here:
-https://shopping-hyo8rc365-gpooja13s-projects.vercel.app/
+https://doccheck.netlify.app/
 
 Check out video here: [Demo video](https://res.cloudinary.com/cloudtrial/video/upload/v1715411758/InShot_20240511_120219589_hzauey.mp4)
 
